@@ -12,6 +12,7 @@ QUIC is a cross-layer transport protocol over UDP and in fact it is being under 
 * Encrypted traffics, avoiding intervention by middleboxes.
 * Low latency with maximum of 1-RTT handshake during connection establishment. Best performance is achieved with 0-RTT handshake (minimizes handshake latency).
 * Communication over a single UDP connection, non-blocking (Head-of-line/HOL) by utilizing multiple streams for each packet.
+* One QUIC connection emulates N TCP connections.
 * Pluggable module, such as Forward Error Correction (FEC).
 * Pluggable **congestion control**, such as Cubic or BBR.
 * Use connection ID, may support client-initiated connection migration in the future.
@@ -20,16 +21,10 @@ QUIC is a cross-layer transport protocol over UDP and in fact it is being under 
 
 ## Default settings
 * 1350 bytes of payload size.
-
-## Comparison with TCP
-* Improved loss recovery.
-* [Advantages] better performance when RTTs are higher.
-* Congestion window exhibits smaller oscillations than TCP.
-* Not fair when competing with TCP sources over bottleneck links because of the nature of UDP and mostly because of its congestion window (*Note: CUBIC*).
-* Unique packet number for better loss recovery by avoding TCP's retransimission ambiguity.
-* UDP proxying is possible but not equivalent to TCP-terminating proxies.
-* [Disadvantages] CPU consuming, approximately twice consuming as TLS/TCP stack.
-* [Disadvantages] UDP may face UDP throttling in some ASs.
+* Maximum congestion window (MACW) is 2000 (for QUIC 37).
+* One connection emulates N=1 (QUIC 37) or N=2 (QUIC 34) connections.
+* [Chrome] Maximum allowed congestion window size is 107.
+* [Chrome] A bug in QUIC prevented slow start threshold from being updated.
 
 ## Streams
 * Can be cancelled (cancelled streams will not be retransmitted when loss occurs).
@@ -42,7 +37,33 @@ QUIC is a cross-layer transport protocol over UDP and in fact it is being under 
 * Takes roughly 33% of channel utilization (default group size is 3).
 * Support was removed in early 2016.
 
-## Related works
+## Congestion Control's State (Cubic)
+* ApplicationLimited
+* [Non-standard] CongestionAvoidanceMaxed
+* CongestionAvoidance
+* [Non-standard] Recovery
+* SlowStart
+* RetransmissionTimeout
+* [Non-standard] TailLossProbe
+
+## Comparison with TCP
+* [Advantage] Unique packet number for better loss recovery by avoding TCP's retransimission ambiguity.
+* [Advantage] Improved congestion control and loss recovery (since it eliminates ACK ambiguity), leading to more precise RTT and bandwidth estimation.
+* [Advantage] Better performance when bandwidth fluctuates (achieve higher throughput).
+* [Advantage] Better performance when RTTs are higher because of 0-RTT connection establishment.
+* [Advantage] Congestion window exhibits smaller oscillations than TCP.
+* [Disadvantage] Not fair when competing with TCP sources over bottleneck links because of the nature of UDP and mostly because of its congestion window (*Note: CUBIC*). This happens even when N is tuned. This is caused by QUIC ability to achieve a larger congestion window.
+* [Disadvantage] UDP proxying is possible but not equivalent to TCP-terminating proxies, which in theory could improve loss recovery and reduce end-to-end delays.
+* [Disadvantage] CPU consuming, approximately twice consuming as TLS/TCP stack.
+* [Disadvantage] UDP may face UDP throttling in some ASs.
+* [Disadvantage] Sensitive to out-of-order packet delivery. Perform worse than TCP in presence of re-ordering. QUIC's loss detection mechanism reports high numbers of false losses.
+* [Disadvantage] QUIC is really weak to variable delays (jitter), compels to significantly worse performance than TCP since jitter makes packet re-ordering.
+
+## Performance Issues
+* QUIC seems to outperform TCP in every scenario except in the case of large numbers of small objects. This is actually biased because performance gain of QUIC is mainly due to 0-RTT connection establishment. QUIC does not really better for the case because of early exit of QUIC's Hybrid Slow Start. But nonetheless still outperform TCP.
+* Increasing NACK thresholds improve QUIC's end-to-end performance especially when jitter is presence in the network.
+
+## Related protocols
 * SPDY
 * Structured Stream Transport (SST)
 * TCP Fast Open

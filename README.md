@@ -5,7 +5,7 @@ This project aims to analyze, benchmark, and elicit interesting features and per
 QUIC is an encrpyted (TLS 1.3, IETF standardization), multiplexed (single connection, multiple streams), and low-latency (0-RTT handshake, connection establishment) application-layer transport protocol over UDP, designed to improve HTTPS performance for secured web traffic. QUIC compromises reliable, secured, and TCP-friendly protocol. 
 
 # Limitations
-The open-source implementation of QUIC in Chromium project is not tuned for production-level performance.
+The open-source implementation of QUIC in Chromium project is not tuned for production-level performance. There may also be a gap between what is publicly released by Chromium project and what Google actually has in production.
 
 # Exploration of Google's QUIC
 TBD
