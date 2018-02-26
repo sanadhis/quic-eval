@@ -4,3 +4,5 @@
 [Fri Feb 23 16:58:34 CET 2018] Attempted to build chromium project, facing problem with Xcode license agreement. Attempted to build go-based quic by [lucas-clemente](https://github.com/lucas-clemente/quic-go), but to no avail because of go-mac problem.
 
 [Sun Feb 25 19:50:23 CET 2018] Successfully built toy quic_server and quic_client from chromium project, but could not make the client get HTTP 200 response. Still stuck with go package environment.
+
+[Mon Feb 26 11:11:37 CET 2018] Successfully made client to get 200 HTTP request. Decided not to go further with go implementation of QUIC. Migrating work to ubuntu virtual machine and trying [google/proto-quic](https://github.com/google/proto-quic).
