@@ -7,4 +7,8 @@
 
 [Mon Feb 26 11:11:37 CET 2018] Successfully made client to get 200 HTTP request. Decided not to go further with go implementation of QUIC. Migrating work to ubuntu virtual machine and trying [google/proto-quic](https://github.com/google/proto-quic).
 
-[Thu Mar  1 21:38:19 CET 2018] Setting environment for shared project directory between host (MacOSX) and guest (Ubuntu) OS, tried to getting used to chromium project
+[Thu Mar  1 21:38:19 CET 2018] Setting environment for shared project directory between host (MacOSX) and guest (Ubuntu) OS, tried to getting used to chromium project.
+
+[Fri Mar  2 15:00:19 CET 2018] Evaluated several crashes when performing `gclient sync`: (1) Need more CPU & RAM, (2) need more space, (3) download should not be interrupted.
+
+[Sun Mar  4 16:53:12 CET 2018] Wrap-up problems: (1) Virtual Box does not support symlink in shared dir (solved); (2) Hardlinks cannot be performed between different partition files (unsolved). Solution: going manual with `/net/tools/quic` dir. Started to inspect the code.
