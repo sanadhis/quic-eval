@@ -12,3 +12,5 @@
 [Fri Mar  2 15:00:19 CET 2018] Evaluated several crashes when performing `gclient sync`: (1) Need more CPU & RAM, (2) need more space, (3) download should not be interrupted.
 
 [Sun Mar  4 16:53:12 CET 2018] Wrap-up problems: (1) Virtual Box does not support symlink in shared dir (solved); (2) Hardlinks cannot be performed between different partition files (unsolved). Solution: going manual with `/net/tools/quic` dir. Started to inspect the code.
+
+[Fri Mar  9 14:49:40 CET 2018] Getting used to gn and ninja, build and link customized QUIC toy client and server.
