@@ -17,5 +17,6 @@ vim net/tools/quic/quic_simple_client_bin_dummy.cc
 ```bash
 ninja -C out/Default quic_client_dummy
 ```
+Note that there is no need to re-generate build files using gn, ninja will automtically regenerating ninja files.
 
 5. Test
