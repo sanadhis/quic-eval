@@ -1,6 +1,6 @@
 # Experiment on QUIC's Toy Client and Server
 1. Custom build using gn and ninja
-Read briefly about gn and then define the custom quic_client and quic_server by editing:
+Read briefly about [gn](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs/quick_start.md) and then define the custom quic_client and quic_server by editing:
 ```bash
 vim net/BUILD.gn
 ```

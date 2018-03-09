@@ -12,3 +12,16 @@ TBD
 
 # Official Documentation
 1. [Chromium Project](https://www.chromium.org/quic)
+
+## Miscellaneous
+### Authors
+
+* **Sanadhi Sutandi** [@sanadhis](https://github.com/sanadhis)
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+### Acknowledgments
+
+* [EPFL DCSL](https://dcsl.epfl.ch/)
