@@ -6,7 +6,16 @@ Some raw and dirty testing for QUIC toy server.
 
 2. Ensure you have compiled `quic_client` and `quic_server` in some `CHROMIUM_PROJECT_DIR/src/out/Default`. Also, make sure both have been working correctly.
 
+3. Export CHROMIUM_PROJECT_DIR environment variable (**the root path, exclude src**).
+```bash
+export CHROMIUM_PROJECT_DIR=/path/to/your/chromium_dir
+```
+
 3. Execute:
 ```bash
-./quic_concurrent_bench.sh $QUIC_PROJECT_DIR_PATH $NUMBER_OF_DESIRED_CONCURRENT_REQUESTS
+./quic_concurrent_bench.sh $NUMBER_OF_DESIRED_CONCURRENT_REQUESTS
+```
+Example:
+```bash
+./quic_concurrent_bench.sh 2
 ```
