@@ -14,3 +14,5 @@
 [Sun Mar  4 16:53:12 CET 2018] Wrap-up problems: (1) Virtual Box does not support symlink in shared dir (solved); (2) Hardlinks cannot be performed between different partition files (unsolved). Solution: going manual with `/net/tools/quic` dir. Started to inspect the code.
 
 [Fri Mar  9 14:49:40 CET 2018] Getting used to gn and ninja, build and link customized QUIC toy client and server.
+
+[Sat Mar 10 13:39:13 CET 2018] Creating test scripts for multiple concurrent requests to QUIC toy server.

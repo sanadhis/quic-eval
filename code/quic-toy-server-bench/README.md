@@ -11,7 +11,7 @@ Some raw and dirty testing for QUIC toy server.
 export CHROMIUM_PROJECT_DIR=/path/to/your/chromium_dir
 ```
 
-3. Execute:
+4. Execute:
 ```bash
 ./quic_concurrent_bench.sh $NUMBER_OF_DESIRED_CONCURRENT_REQUESTS
 ```
