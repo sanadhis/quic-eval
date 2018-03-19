@@ -16,3 +16,7 @@
 [Fri Mar  9 14:49:40 CET 2018] Getting used to gn and ninja, build and link customized QUIC toy client and server.
 
 [Sat Mar 10 13:39:13 CET 2018] Creating test scripts for multiple concurrent requests to QUIC toy server.
+
+[Sat Mar 10 20:24:55 CET 2018] Attempting to modify QUIC client to use persistent connection. Currently, it is known that QUIC always close the UDP socket at the end of request. QUIC send FIN=true flag when making the request.
+
+[Fri Mar 16 18:00:00 CET 2018] Created two QUIC client: A persistent client and a client with multiple connections. Captured the traffic with wireshark but did not find a way to decrypt the traffic.
