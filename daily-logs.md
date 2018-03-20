@@ -20,3 +20,5 @@
 [Sat Mar 10 20:24:55 CET 2018] Attempting to modify QUIC client to use persistent connection. Currently, it is known that QUIC always close the UDP socket at the end of request. QUIC send FIN=true flag when making the request.
 
 [Fri Mar 16 18:00:00 CET 2018] Created two QUIC client: A persistent client and a client with multiple connections. Captured the traffic with wireshark but did not find a way to decrypt the traffic.
+
+[Tue Mar 20 11:02:45 CET 2018] Inspected the log of QUIC client and figured out that the cause of CHLO (Client Hello) rejection was because of QUIC versioning mismatch between client and server. By default, client use the latest one (99) while server implements v41. To overcome this, pass: `--quic_version=41` when executing the client.
