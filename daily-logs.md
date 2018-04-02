@@ -23,4 +23,4 @@
 
 [Tue Mar 20 11:02:45 CET 2018] Inspected the log of QUIC client and figured out that the cause of CHLO (Client Hello) rejection was because of QUIC versioning mismatch between client and server. By default, client use the latest one (99) while server implements v41. To overcome this, pass: `--quic-version=41` **(with dash instead of underscore)** when executing the client.
 
-[Mon Apr  2 22:02:26 CEST 2018] Trying two approach for investigating QUIC traffic: (1) Making log more verbose -> Succeccfully discover streams' creations in detail. (2) Wireshark 2.5.2 with decryption for (QUIC IETF)[https://github.com/ngtcp2/ngtcp2], details (here)[https://github.com/ngtcp2/ngtcp2/pull/67].
+[Mon Apr  2 22:02:26 CEST 2018] Trying two approaches for investigating QUIC traffic: (1) Making log more verbose -> Successfully discover streams' creations in detail. (2) Wireshark 2.5.2 with decryption for (QUIC IETF)[https://github.com/ngtcp2/ngtcp2], details (here)[https://github.com/ngtcp2/ngtcp2/pull/67].
