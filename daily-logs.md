@@ -26,3 +26,5 @@
 [Mon Apr  2 22:02:26 CEST 2018] Trying two approaches for investigating QUIC traffic: (1) Making log more verbose -> Successfully discover streams' creations in detail. (2) Wireshark 2.5.2 with decryption for [QUIC IETF](https://github.com/ngtcp2/ngtcp2), details [here](https://github.com/ngtcp2/ngtcp2/pull/67).
 
 [Thu Apr  5 21:36:50 CEST 2018] Cannot extract key from decrypter->getKey(). QuicStringPiece returns non-standard hex leads to non-ASCII characters. Trying to make the log of stream data more verbose.
+
+[Fri Apr  6 15:42:42 CEST 2018] Done trying approach [here](https://github.com/ngtcp2/ngtcp2/pull/67), cannot be implemented to QUIC's toy server and client because: (1) This only works for IETF definition of SH (short header) packets. (2) Works with TLS1.3 from patched OpenSSL, while QUIC toy server and client implement their own TLS cryptographic handshake.
