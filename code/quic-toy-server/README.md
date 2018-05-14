@@ -20,3 +20,6 @@ ninja -C out/Default quic_client_dummy
 Note that there is no need to re-generate build files using gn, ninja will automtically regenerating ninja files.
 
 5. Test
+
+# About code inside `net` dir
+The modifications are made to official code from Google's chromium repository. The changes are made atop of branch `29cad491a5` and they are tested in OSX.
