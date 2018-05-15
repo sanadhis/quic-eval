@@ -346,7 +346,6 @@ int main(int argc, char* argv[]) {
     client.set_store_response(true);
 
   while(FLAGS_nrequest!=0){
-    sleep(1);
     // Send the request.
     client.SendRequestAndWaitForResponse(header_block, body, /*fin=*/true);
 
