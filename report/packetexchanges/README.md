@@ -22,7 +22,6 @@ How to reproduce the packets on Wireshark (almost) similar to the graph:
 2. Packet 3 is the continuation for the packet 2. We can avoid this packet to be sent by increasing the initial_mtu when executing the client (see next graph and explanation).
 3. Some random delay in both client and server may change the order of the certain packets, especially the 10th packet onward. The delay may be caused by some verbose logging that either client or server applies.
 
-<br>
 # 0-RTT Test QUIC Toy Server and Google Chrome
 ![package_exchanges2](https://raw.githubusercontent.com/sanadhis/quic-eval/master/report/packetexchanges/img/ChromeSubsequentRequest_0-RTT.png)
 
@@ -46,7 +45,6 @@ chrome \
 **Disclaimer**
 1. Again, some random delay in both client and server may change the order of the certain packets, especially the 5th packet onward.
 
-<br>
 # Reducing Packets and Disabling Logging in Both Sides
 ![package_exchanges3](https://raw.githubusercontent.com/sanadhis/quic-eval/master/report/packetexchanges/img/QUICChromium_Normal Request_reducedpacket.png)
 
