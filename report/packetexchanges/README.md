@@ -46,7 +46,7 @@ chrome \
 1. Again, some random delay in both client and server may change the order of the certain packets, especially the 5th packet onward.
 
 # Reducing Packets and Disabling Logging in Both Sides
-![package_exchanges3](https://raw.githubusercontent.com/sanadhis/quic-eval/master/report/packetexchanges/img/QUICChromium_Normal Request_reducedpacket.png)
+![package_exchanges3](https://raw.githubusercontent.com/sanadhis/quic-eval/master/report/packetexchanges/img/QUICChromium_Normal_Request_reducedpacket.png)
 
 How to reproduce the packets on Wireshark (almost) similar to the graph:
 <br>Client (now disable certificate validation and set the initial mtu)
